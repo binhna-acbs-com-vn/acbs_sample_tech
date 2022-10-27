@@ -9,7 +9,6 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:nab_store/constants.dart';
 import 'package:nab_store/responsive.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class WebviewEKYC extends StatefulWidget {
   const WebviewEKYC({
