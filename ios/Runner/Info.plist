@@ -3,13 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>$(PRODUCT_NAME) Camera Usage!</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>$(PRODUCT_NAME) Microphone Usage!</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to request your permission to read your photos to load them into the app.</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Record audio for playback</string>
+	<string>$nab_store Cần truy cập Camera để sử dụng tính năng chụp ảnh</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
