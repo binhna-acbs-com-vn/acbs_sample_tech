@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "663098562832",
+    "project_id": "nab-store",
+    "storage_bucket": "nab-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663098562832:android:81d7fbbf472cbd129a6d95",
+        "android_client_info": {
+          "package_name": "com.example.nab_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663098562832-cqhhcdjf2f2a50u4njk4j88lgog0ehv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAngOISowwEJrIG750Scry3y_SWJ3LLsg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663098562832-cqhhcdjf2f2a50u4njk4j88lgog0ehv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
