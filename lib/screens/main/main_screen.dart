@@ -12,6 +12,7 @@ import 'package:nab_store/tabs/trending_tab.dart';
 import 'package:nab_store/theme/const.dart';
 
 import '../../constants.dart';
+import '../dialog/dynamic_link_dialog.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -47,8 +48,12 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     dynamicLinks.onLink.listen((dynamicLinkData) {
       print(dynamicLinkData);
       setState(() {
-        _controller.onSetPageFromDynamicLink(
-            int.parse(dynamicLinkData.link.toString().split("=").last));
+        // _controller.onSetPageFromDynamicLink(
+        //     int.parse(dynamicLinkData.link.toString().split("=").last));
+        print("Open dialog dynamic links");
+        Get.dialog(DynamicLinkDialog(
+          dynamicLink: dynamicLinkData.link.toString(),
+        ));
       });
     }).onError((error) {
       print('onLink error');
