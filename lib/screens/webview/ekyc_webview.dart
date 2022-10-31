@@ -8,7 +8,6 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 // import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:nab_store/constants.dart';
 import 'package:nab_store/responsive.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class WebviewEKYC extends StatefulWidget {
   const WebviewEKYC({
@@ -70,14 +69,14 @@ class _WebviewEKYCState extends State<WebviewEKYC> {
       //   ),
       // ),
       body: InAppWebView(
-          // onLoadStart: (controller, resource) {
-          //   print("NHAY VAO DAY");
-          //   print("CONSOLE MESSAGE $resource");
-          //   controller.getUrl().then((value) => print("IN CAI NAY: $value"));
-          //   controller
-          //       .getOriginalUrl()
-          //       .then((value) => print("IN CAI NAY NUA: $value"));
-          // },
+          onLoadStart: (controller, resource) {
+            print("NHAY VAO DAY");
+            print("CONSOLE MESSAGE $resource");
+            controller.getUrl().then((value) => print("IN CAI NAY: $value"));
+            controller
+                .getOriginalUrl()
+                .then((value) => print("IN CAI NAY NUA: $value"));
+          },
           // onConsoleMessage: (controller, resource) {
           //   print("NHAY VAO DAY");
           //   print("CONSOLE MESSAGE $resource");
@@ -90,9 +89,16 @@ class _WebviewEKYCState extends State<WebviewEKYC> {
             url: Uri.parse("https://dev.acbs.tech/"),
           ),
           initialOptions: InAppWebViewGroupOptions(
+            android: AndroidInAppWebViewOptions(
+              useHybridComposition: true,
+            ),
+            ios: IOSInAppWebViewOptions(
+              allowsInlineMediaPlayback: true,
+            ),
             crossPlatform: InAppWebViewOptions(
               userAgent:
                   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+              useShouldOverrideUrlLoading: true,
               mediaPlaybackRequiresUserGesture: false,
             ),
           ),
@@ -102,8 +108,9 @@ class _WebviewEKYCState extends State<WebviewEKYC> {
           androidOnPermissionRequest: (InAppWebViewController controller,
               String origin, List<String> resources) async {
             return PermissionRequestResponse(
-                resources: resources,
-                action: PermissionRequestResponseAction.GRANT);
+              resources: resources,
+              action: PermissionRequestResponseAction.GRANT,
+            );
           }),
     );
   }

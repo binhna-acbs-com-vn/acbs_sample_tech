@@ -10,7 +10,6 @@ import 'package:nab_store/tabs/recent_tab.dart';
 import 'package:nab_store/tabs/top_tab.dart';
 import 'package:nab_store/tabs/trending_tab.dart';
 import 'package:nab_store/theme/const.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import '../../constants.dart';
 
@@ -35,7 +34,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   }
 
   handlePermission() async {
-    await Permission.camera.request();
+    // await Permission.camera.request();
     // await Permission.mediaLibrary.request();
     // await Permission.microphone.request();
     // print(await Permission.camera.status);
